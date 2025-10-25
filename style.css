@@ -1,0 +1,76 @@
+/* Загальні налаштування */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2b6cb0;
+  --secondary: #e2e8f0;
+  --text: #1a202c;
+  --radius: 0.5rem;
+  --space: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  color: var(--text);
+  background: var(--secondary);
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.menu a {
+  margin-left: var(--space);
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Контейнер */
+.container {
+  max-width: 90%;
+  margin: 1rem auto;
+}
+
+/* Картки */
+.cards {
+  display: grid;
+  gap: var(--space);
+}
+
+.card {
+  background: white;
+  padding: var(--space);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+/* Кнопки */
+.btn {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.btn.primary { background: var(--primary); color: white; }
+.btn:hover, .btn:focus-visible { opacity: 0.9; }
+
+/*
