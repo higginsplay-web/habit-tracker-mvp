@@ -1,22 +1,22 @@
-// Створення модального вікна
+// Г‘ГІГўГ®Г°ГҐГ­Г­Гї Г¬Г®Г¤Г Г«ГјГ­Г®ГЈГ® ГўВіГЄГ­Г 
 const addLink = document.querySelector('.menu a:nth-child(2)');
 const container = document.querySelector('.container');
 
-// Створюємо HTML модалки
+// Г‘ГІГўГ®Г°ГѕВєГ¬Г® HTML Г¬Г®Г¤Г Г«ГЄГЁ
 const modalHTML = `
   <div id="modal-overlay" class="overlay"></div>
   <div id="modal" class="modal">
-    <h2>Нове завдання</h2>
-    <input type="text" id="task-title" placeholder="Заголовок" />
-    <input type="text" id="task-desc" placeholder="Опис" />
-    <small class="error hidden" id="error-msg">Заповніть обидва поля</small>
-    <button id="save-task" class="btn primary">Зберегти</button>
-    <button id="cancel-task" class="btn">Скасувати</button>
+    <h2>ГЌГ®ГўГҐ Г§Г ГўГ¤Г Г­Г­Гї</h2>
+    <input type="text" id="task-title" placeholder="Р—Р°РіРѕР»РѕРІРѕ" />
+    <input type="text" id="task-desc" placeholder="РўРµРіС–С‚Р»РµСЂ" />
+    <small class="error hidden" id="error-msg">РџРµРЅР†СЃ</small>
+    <button id="save-task" class="btn primary">Р”РѕРґР°С‚Рё</button>
+    <button id="cancel-task" class="btn">Р’С–РґРјС–РЅРёС‚Рё</button>
   </div>
 `;
 container.insertAdjacentHTML('beforeend', modalHTML);
 
-// Елементи модалки
+// Г…Г«ГҐГ¬ГҐГ­ГІГЁ Г¬Г®Г¤Г Г«ГЄГЁ
 const modal = document.querySelector('#modal');
 const modalOverlay = document.querySelector('#modal-overlay');
 const titleInput = document.querySelector('#task-title');
@@ -26,7 +26,7 @@ const saveBtn = document.querySelector('#save-task');
 const cancelBtn = document.querySelector('#cancel-task');
 const cards = document.querySelector('.cards');
 
-// Відкрити модалку
+// Г‚ВіГ¤ГЄГ°ГЁГІГЁ Г¬Г®Г¤Г Г«ГЄГі
 addLink.addEventListener('click', e => {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -35,7 +35,7 @@ addLink.addEventListener('click', e => {
   titleInput.focus();
 });
 
-// Закрити модалку
+// Г‡Г ГЄГ°ГЁГІГЁ Г¬Г®Г¤Г Г«ГЄГі
 function closeModal() {
   modal.classList.add('hidden');
   modalOverlay.classList.add('hidden');
@@ -51,7 +51,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Зберегти завдання
+// Г‡ГЎГҐГ°ГҐГЈГІГЁ Г§Г ГўГ¤Г Г­Г­Гї
 saveBtn.addEventListener('click', () => {
   const title = titleInput.value.trim();
   const desc = descInput.value.trim();
@@ -64,18 +64,18 @@ saveBtn.addEventListener('click', () => {
     newCard.innerHTML = `
       <h3>${title}</h3>
       <p>${desc}</p>
-      <button class="btn primary">Деталі</button>
+      <button class="btn primary">Г„ГҐГІГ Г«Ві</button>
     `;
     cards.appendChild(newCard);
     closeModal();
   }
 });
 
-// Обробка кнопок «Деталі» та «Редагувати»
+// ГЋГЎГ°Г®ГЎГЄГ  ГЄГ­Г®ГЇГ®ГЄ В«Г„ГҐГІГ Г«ВіВ» ГІГ  В«ГђГҐГ¤Г ГЈГіГўГ ГІГЁВ»
 cards.addEventListener('click', e => {
   if (e.target.classList.contains('primary')) {
-    alert('Деталі завдання:\n' + e.target.parentElement.querySelector('p').textContent);
-  } else if (e.target.textContent === 'Редагувати') {
+    alert('Г„ГҐГІГ Г«Ві Г§Г ГўГ¤Г Г­Г­Гї:\n' + e.target.parentElement.querySelector('p').textContent);
+  } else if (e.target.textContent === 'ГђГҐГ¤Г ГЈГіГўГ ГІГЁ') {
     const card = e.target.parentElement;
     const currentTitle = card.querySelector('h3').textContent;
     const currentDesc = card.querySelector('p').textContent;
@@ -96,8 +96,9 @@ cards.addEventListener('click', e => {
         card.querySelector('h3').textContent = newTitle;
         card.querySelector('p').textContent = newDesc;
         closeModal();
-        saveBtn.onclick = null; // повернути стандартну поведінку
+        saveBtn.onclick = null; // ГЇГ®ГўГҐГ°Г­ГіГІГЁ Г±ГІГ Г­Г¤Г Г°ГІГ­Гі ГЇГ®ГўГҐГ¤ВіГ­ГЄГі
       }
     };
   }
 });
+
