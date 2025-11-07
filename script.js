@@ -6,7 +6,7 @@ const container = document.querySelector('.container');
 const modalHTML = `
   <div id="modal-overlay" class="overlay"></div>
   <div id="modal" class="modal">
-    <h2>Íîâå çàâäàííÿ</h2>
+    <h2>Сергій Гололобов/h2>
     <input type="text" id="task-title" placeholder="Заголово" />
     <input type="text" id="task-desc" placeholder="Тегітлер" />
     <small class="error hidden" id="error-msg">ПенІс</small>
@@ -101,4 +101,5 @@ cards.addEventListener('click', e => {
     };
   }
 });
+
 
